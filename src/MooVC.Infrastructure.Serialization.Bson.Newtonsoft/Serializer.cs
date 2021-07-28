@@ -1,6 +1,7 @@
 ﻿namespace MooVC.Infrastructure.Serialization.Bson.Newtonsoft
 {
     using System;
+    using System.Collections;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -42,11 +43,11 @@
 
         protected override T PerformDeserialize<T>(Stream source)
         {
+            Type type = typeof(T);
+            bool readRootValueAsArray = typeof(IEnumerable).IsAssignableFrom(type) || type.IsArray;
+
             using var binary = new BinaryReader(source, Encoding, true);
-            using var reader = new BsonDataReader(source)
-            {
-                DateTimeKindHandling = Kind,
-            };
+            using var reader = new BsonDataReader(source, readRootValueAsArray, Kind);
 
             T? result = Json.Deserialize<T>(reader);
 
