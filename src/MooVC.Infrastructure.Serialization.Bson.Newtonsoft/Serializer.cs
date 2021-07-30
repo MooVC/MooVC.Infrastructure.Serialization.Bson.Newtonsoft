@@ -2,12 +2,11 @@
 {
     using System;
     using System.Collections;
-    using System.Collections.Generic;
     using System.IO;
-    using System.Linq;
     using System.Text;
     using global::Newtonsoft.Json;
     using global::Newtonsoft.Json.Bson;
+    using MooVC.Compression;
     using MooVC.Serialization;
     using static System.String;
     using static MooVC.Infrastructure.Serialization.Bson.Newtonsoft.Resources;
@@ -15,13 +14,15 @@
     public sealed class Serializer
         : SynchronousSerializer
     {
-        public static readonly Encoding DefaultEncoding = new UTF8Encoding(false, true);
+        public static readonly Encoding DefaultEncoding = Encoding.UTF8;
         private readonly Lazy<JsonSerializer> json;
 
         public Serializer(
+            ICompressor? compressor = default,
             Encoding? encoding = default,
             DateTimeKind kind = DateTimeKind.Unspecified,
             JsonSerializerSettings? settings = default)
+            : base(compressor: compressor)
         {
             Encoding = encoding ?? DefaultEncoding;
             json = new Lazy<JsonSerializer>(() => JsonSerializer.CreateDefault(settings));
@@ -33,13 +34,6 @@
         public JsonSerializer Json => json.Value;
 
         public DateTimeKind Kind { get; }
-
-        protected override T PerformDeserialize<T>(IEnumerable<byte> data)
-        {
-            using var stream = new MemoryStream(data.ToArray());
-
-            return PerformDeserialize<T>(stream);
-        }
 
         protected override T PerformDeserialize<T>(Stream source)
         {
@@ -59,15 +53,6 @@
             }
 
             return result;
-        }
-
-        protected override IEnumerable<byte> PerformSerialize<T>(T instance)
-        {
-            using var stream = new MemoryStream();
-
-            PerformSerialize(instance, stream);
-
-            return stream.ToArray();
         }
 
         protected override void PerformSerialize<T>(T instance, Stream target)
