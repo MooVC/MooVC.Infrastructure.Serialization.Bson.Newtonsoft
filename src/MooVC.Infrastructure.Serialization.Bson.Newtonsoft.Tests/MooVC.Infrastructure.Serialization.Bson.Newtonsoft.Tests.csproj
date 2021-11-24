@@ -16,14 +16,14 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <RepositoryUrl>https://github.com/MooVC/moovc.infrastructure.serialization.bson.newtonsoft.git</RepositoryUrl>
     <RootNamespace>MooVC.Infrastructure.Serialization.Bson.Newtonsoft</RootNamespace>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="coverlet.msbuild" Version="3.*">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.*" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.*" />
     <PackageReference Include="Moq" Version="4.*" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.*">
       <PrivateAssets>all</PrivateAssets>
