@@ -4,6 +4,7 @@
 
 The MooVC Infrastructural Serialization library for Newtonsoft BSON is designed to encapsulate the Newtonsoft.Json.Bson implementation through the standardized MooVC.Serialization interpretation, facilitating ease of consumption within inner layers without direct coupling to infrastructural concerns.
 
-# Release v1.0.0
+# Release v2.0.0
 
-- Initial Release
+- Changed to target MooVC V6.* (**breaking change**).
+- Changed to target NET 6 in addition to NET 5 and NET Standard 2.1.
