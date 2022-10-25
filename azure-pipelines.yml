@@ -17,7 +17,6 @@ schedules:
         - release/*
     always: true
 
-
 pool:
   vmImage: 'windows-latest'
 
@@ -44,6 +43,13 @@ steps:
     useConfigFile: true
     configFilePath: './gitversion.yml'
 
+- task: UseDotNet@2
+  condition: succeeded()
+  displayName: 'Use .NET 6 Core SDK'
+  inputs:
+    packageType: 'sdk'
+    version: '6.x'
+        
 - task: DotNetCoreCLI@2
   condition: succeeded()
   displayName: 'Restore Nuget Packages for Solution'
@@ -51,7 +57,7 @@ steps:
     command: 'restore'
     feedsToUse: 'select'
     projects: '$(solution)'
-    
+
 - task: DotNetCoreCLI@2
   condition: succeeded()
   displayName: 'Build Solution'
@@ -88,7 +94,7 @@ steps:
   displayName: 'Package Artifacts'
   inputs:
     command: 'pack'
-    packagesToPack: '**/*.csproj'
+    packagesToPack: '**/*.csproj;!**/*.Tests.csproj'
     versionEnvVar: 'GitVersion.NuGetVersion'
     versioningScheme: 'byEnvVar'
 

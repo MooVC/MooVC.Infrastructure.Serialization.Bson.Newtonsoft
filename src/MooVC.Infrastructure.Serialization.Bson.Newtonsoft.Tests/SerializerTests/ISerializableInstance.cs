@@ -1,15 +1,14 @@
-﻿namespace MooVC.Infrastructure.Serialization.Bson.Newtonsoft.SerializerTests
+﻿namespace MooVC.Infrastructure.Serialization.Bson.Newtonsoft.SerializerTests;
+
+using System.Collections.Generic;
+
+internal interface ISerializableInstance
 {
-    using System.Collections.Generic;
+    IEnumerable<ulong>? Array { get; }
 
-    internal interface ISerializableInstance
-    {
-        IEnumerable<ulong>? Array { get; }
+    int? Integer { get; }
 
-        int? Integer { get; }
+    ISerializableInstance? Object { get; }
 
-        ISerializableInstance? Object { get; }
-
-        string? String { get; }
-    }
+    string? String { get; }
 }

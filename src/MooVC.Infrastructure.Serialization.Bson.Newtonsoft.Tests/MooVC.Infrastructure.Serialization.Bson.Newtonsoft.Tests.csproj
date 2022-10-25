@@ -1,41 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Authors>Paul Martins;ControlSoft Automation Systems Limited</Authors>
-    <CodeAnalysisRuleSet>../../stylecop.analyzers.ruleset</CodeAnalysisRuleSet>
-    <Company>MooVC</Company>
-    <Copyright>MooVC © 2021</Copyright>
     <Description>Tests library designed to encapsulate the Newtonsoft.Json.Bson implementation through the standardized MooVC.Serialization interpretation, facilitating ease of consumption within inner layers without direct coupling to infrastructural concerns.</Description>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <IsPackable>false</IsPackable>
-    <LangVersion>latest</LangVersion>
-    <NoWarn>NU5105;CS0618</NoWarn>
-    <Nullable>enable</Nullable>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/MooVC/moovc.infrastructure.serialization.bson.newtonsoft</PackageProjectUrl>
-    <Product>MooVC</Product>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <RepositoryUrl>https://github.com/MooVC/moovc.infrastructure.serialization.bson.newtonsoft.git</RepositoryUrl>
     <RootNamespace>MooVC.Infrastructure.Serialization.Bson.Newtonsoft</RootNamespace>
-    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="coverlet.msbuild" Version="3.*">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.*" />
-    <PackageReference Include="Moq" Version="4.*" />
-    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.*">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="xunit" Version="2.*" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="2.*">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MooVC.Infrastructure.Serialization.Bson.Newtonsoft\MooVC.Infrastructure.Serialization.Bson.Newtonsoft.csproj" />
-  </ItemGroup>
 </Project>
