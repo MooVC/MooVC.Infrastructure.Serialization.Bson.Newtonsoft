@@ -3,7 +3,7 @@
     <Description>A library designed to encapsulate the Newtonsoft.Json.Bson implementation through the standardized MooVC.Serialization interpretation, facilitating ease of consumption within inner layers without direct coupling to infrastructural concerns.</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MooVC" Version="7.0.0-beta*" />
+    <PackageReference Include="MooVC" Version="7.*" />
     <PackageReference Include="Newtonsoft.Json.Bson" Version="1.*" />
   </ItemGroup>
   <ItemGroup>
