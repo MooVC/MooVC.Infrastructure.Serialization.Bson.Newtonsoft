@@ -6,19 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MooVC.Infrastructure.Serialization.Bson.Newtonsoft", "MooVC.Infrastructure.Serialization.Bson.Newtonsoft\MooVC.Infrastructure.Serialization.Bson.Newtonsoft.csproj", "{C0FF7CB6-21CB-4130-92A4-D389F056A476}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8E15DF3F-0EBC-4769-8FEA-D898EFB9C19E}"
-	ProjectSection(SolutionItems) = preProject
-		..\.editorconfig = ..\.editorconfig
-		..\.gitignore = ..\.gitignore
-		..\.runsettings = ..\.runsettings
-		..\azure-pipelines.yml = ..\azure-pipelines.yml
-		..\directory.build.props = ..\directory.build.props
-		..\gitversion.yml = ..\gitversion.yml
-		..\LICENSE = ..\LICENSE
-		..\nuget.config = ..\nuget.config
-		..\README.md = ..\README.md
-		..\analyzers\stylecop.code.ruleset = ..\analyzers\stylecop.code.ruleset
-		..\analyzers\stylecop.tests.ruleset = ..\analyzers\stylecop.tests.ruleset
-	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MooVC.Infrastructure.Serialization.Bson.Newtonsoft.Tests", "MooVC.Infrastructure.Serialization.Bson.Newtonsoft.Tests\MooVC.Infrastructure.Serialization.Bson.Newtonsoft.Tests.csproj", "{EC5B2AE6-4604-4E1A-A70E-58921E765CEC}"
 EndProject

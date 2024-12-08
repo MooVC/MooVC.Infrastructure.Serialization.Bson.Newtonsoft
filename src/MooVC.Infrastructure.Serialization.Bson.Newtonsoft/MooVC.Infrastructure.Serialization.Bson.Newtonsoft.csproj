@@ -3,8 +3,8 @@
     <Description>A library designed to encapsulate the Newtonsoft.Json.Bson implementation through the standardized MooVC.Serialization interpretation, facilitating ease of consumption within inner layers without direct coupling to infrastructural concerns.</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="MooVC" Version="7.*" />
-    <PackageReference Include="Newtonsoft.Json.Bson" Version="1.*" />
+    <PackageReference Include="MooVC" Version="8.0.0" />
+    <PackageReference Include="Newtonsoft.Json.Bson" Version="1.0.3" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources.Designer.cs">
